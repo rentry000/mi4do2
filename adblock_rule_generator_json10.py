@@ -7,37 +7,29 @@ import os
 
 # 定义广告过滤器URL列表
 URL_LIST = [
-  "https://raw.githubusercontent.com/SystemJargon/filters/refs/heads/main/threats.txt",
-"https://raw.githubusercontent.com/SystemJargon/filters/refs/heads/main/porn.txt",
-"https://raw.githubusercontent.com/SystemJargon/filters/refs/heads/main/nrds-30days.txt",
-"https://raw.githubusercontent.com/SystemJargon/filters/refs/heads/main/firebog-ticklist.txt",
-"https://raw.githubusercontent.com/SystemJargon/filters/refs/heads/main/core_heavy.txt",
-"https://raw.githubusercontent.com/SystemJargon/filters/refs/heads/main/ads.txt",
-"https://raw.githubusercontent.com/mikndotdev/domain-blacklist-api/refs/heads/master/blacklist.txt",
-"https://raw.githubusercontent.com/lucasdss/blockdomain/refs/heads/main/blockdomain13",
-"https://raw.githubusercontent.com/lucasdss/blockdomain/refs/heads/main/blockdomain12",
-"https://raw.githubusercontent.com/lucasdss/blockdomain/refs/heads/main/blockdomain11",
-"https://raw.githubusercontent.com/lucasdss/blockdomain/refs/heads/main/blockdomain10",
-"https://raw.githubusercontent.com/lucasdss/blockdomain/refs/heads/main/blockdomain09",
-"https://raw.githubusercontent.com/lucasdss/blockdomain/refs/heads/main/blockdomain08",
-"https://raw.githubusercontent.com/lucasdss/blockdomain/refs/heads/main/blockdomain07",
-"https://raw.githubusercontent.com/lucasdss/blockdomain/refs/heads/main/blockdomain06",
-"https://raw.githubusercontent.com/lucasdss/blockdomain/refs/heads/main/blockdomain05",
-"https://raw.githubusercontent.com/lucasdss/blockdomain/refs/heads/main/blockdomain03",
-"https://raw.githubusercontent.com/lucasdss/blockdomain/refs/heads/main/blockdomain04",
-"https://raw.githubusercontent.com/essinghigh/blocklist-abuseipdb-compressed/refs/heads/main/abuseipdb-s100-all_compressed.ipv4",
-"https://raw.githubusercontent.com/lucasdss/blockdomain/refs/heads/main/blockdomain02",
-"https://raw.githubusercontent.com/lucasdss/blockdomain/refs/heads/main/blockdomain01",
-"https://raw.githubusercontent.com/lucasdss/blockdomain/refs/heads/main/blockdomain00",
-"https://raw.githubusercontent.com/cenk/bad-hosts/refs/heads/main/bad-hosts-abp",
-"https://raw.githubusercontent.com/arobass/dns-blocklist/refs/heads/master/merged-dns-blocklist.txt",
-"https://objects.githubusercontent.com/github-production-release-asset-2e65be/369178935/21b27849-0ed9-4d68-b4a1-4ffaa9586e96?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=releaseassetproduction%2F20250706%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250706T142825Z&X-Amz-Expires=1800&X-Amz-Signature=18e2e2c8f2da78e204f2e4eadaecb74c683da25b79d38c8507d819cd4eb19988&X-Amz-SignedHeaders=host&response-content-disposition=attachment%3B%20filename%3Dmihomo-android-arm64-v8-v1.19.11.gz&response-content-type=application%2Foctet-stream",
-"https://objects.githubusercontent.com/github-production-release-asset-2e65be/369178935/342da8f7-1ed7-44a8-bda3-6412a0e091cc?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=releaseassetproduction%2F20250706%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250706T141745Z&X-Amz-Expires=1800&X-Amz-Signature=994d9389b0ae500a76e1559b08bde340901cec0c12e5ec6ae4c86d16f53c66fa&X-Amz-SignedHeaders=host&response-content-disposition=attachment%3B%20filename%3Dmihomo-linux-arm64-v1.19.11.gz&response-content-type=application%2Foctet-stream"
+heads/main/blocklists/generated/adguard/social/tiktok.txt",
+"https://raw.githubusercontent.com/sefinek/Sefinek-Blocklist-Collection/refs/heads/main/blocklists/generated/adguard/social/twitter.txt",
+"https://raw.githubusercontent.com/sefinek/Sefinek-Blocklist-Collection/refs/heads/main/blocklists/generated/adguard/spam/FadeMind/add-Spam.fork.txt",
+"https://github.com/sefinek/Sefinek-Blocklist-Collection/raw/refs/heads/main/blocklists/generated/adguard/spam/RPiList/spam-mails.fork.txt",
+"https://raw.githubusercontent.com/sefinek/Sefinek-Blocklist-Collection/refs/heads/main/blocklists/generated/adguard/spam/stopforumspam/toxic-domains-whole.fork.txt",
+"https://raw.githubusercontent.com/sefinek/Sefinek-Blocklist-Collection/refs/heads/main/blocklists/generated/adguard/suspicious/FadeMind/add-Risk.fork.txt",
+"https://raw.githubusercontent.com/sefinek/Sefinek-Blocklist-Collection/refs/heads/main/blocklists/generated/adguard/suspicious/firebog/w3kbl.fork.txt",
+"https://raw.githubusercontent.com/sefinek/Sefinek-Blocklist-Collection/refs/heads/main/blocklists/generated/adguard/tracking-and-telemetry/0Zinc/easyprivacy.fork.txt",
+"https://raw.githubusercontent.com/sefinek/Sefinek-Blocklist-Collection/refs/heads/main/blocklists/generated/adguard/tracking-and-telemetry/MajkiIT/adguard-mobile-host.fork.txt",
+"https://github.com/sefinek/Sefinek-Blocklist-Collection/raw/refs/heads/main/blocklists/generated/adguard/tracking-and-telemetry/ShadowWhisperer/tracking.fork.txt",
+"https://raw.githubusercontent.com/sefinek/Sefinek-Blocklist-Collection/refs/heads/main/blocklists/generated/adguard/tracking-and-telemetry/ente-dev/tv.fork.txt",
+"https://raw.githubusercontent.com/sefinek/Sefinek-Blocklist-Collection/refs/heads/main/blocklists/generated/adguard/tracking-and-telemetry/frogeye/firstparty-trackers-hosts.txt",
+"https://raw.githubusercontent.com/sefinek/Sefinek-Blocklist-Collection/refs/heads/main/blocklists/generated/adguard/tracking-and-telemetry/neodevpro/host.fork.txt",
+"https://raw.githubusercontent.com/sefinek/Sefinek-Blocklist-Collection/refs/heads/main/blocklists/generated/adguard/tracking-and-telemetry/quidsup/trackers-hosts.fork.txt",
+"https://raw.githubusercontent.com/sefinek/Sefinek-Blocklist-Collection/refs/heads/main/blocklists/generated/adguard/useless-websites/jarelllama/parked-domains.fork.txt"
+
+
+
 ]
 
 # 日志文件路径
 LOG_FILE = "adblock_log.txt"
-OUTPUT_FILE = "adblock_reject8.yaml"  # Mihomo 使用的 YAML 格式
+OUTPUT_FILE = "adblock_reject10.yaml"  # Mihomo 使用的 YAML 格式
 
 def is_valid_dns_domain(domain):
     """验证域名是否符合DNS规范"""
