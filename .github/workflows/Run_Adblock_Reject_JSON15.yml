@@ -21,7 +21,7 @@ jobs:
     - name: Setup Python 3.12.11  # 设置 Python 3.9 环境
       uses: actions/setup-python@v4
       with:
-        python-version: '3.12.111'  # 指定 Python 版本 3.9
+        python-version: '3.12.11'  # 指定 Python 版本 3.9
 
     - name: Checkout repository  # 检出代码仓库
       uses: actions/checkout@v3
