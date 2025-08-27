@@ -10,7 +10,10 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest  # 使用最新的 Ubuntu 版本作为运行器
+    runs-on: ubuntu-latest  # 使用最新的 Ubuntu 版本作为运行
+    # The type of runner that the job will run o
+    # Maximum duration of the job
+    timeout-minutes: 360
 
     steps:
     - name: Setup Node.js 20  # 设置 Node.js 20 环境
